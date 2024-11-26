@@ -7,13 +7,13 @@
 size = Vector3(0.564575, 0.333267, 0.385284)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wo7p7"]
-size = Vector3(1.34961, 0.342651, 1.19434)
+size = Vector3(1.34961, 1.02765, 1.19434)
 
 [node name="lever2" instance=ExtResource("1_ulecd")]
 script = ExtResource("2_0xonf")
 
 [node name="handle" parent="lever" index="0"]
-transform = Transform3D(0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, 7.21911e-16, 0.1, 5.77529e-15)
+transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, 7.21911e-16, 0.1, 5.77529e-15)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 
@@ -21,8 +21,16 @@ transform = Transform3D(0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00726318, 0.191383, 0.0266876)
 shape = SubResource("BoxShape3D_2xfae")
 
-[node name="Area3D" type="Area3D" parent="." index="3"]
+[node name="LeverArea3D" type="Area3D" parent="." index="3"]
+collision_mask = 4
+monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328674, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverArea3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.671173, 0)
 shape = SubResource("BoxShape3D_wo7p7")
+
+[node name="CooldownTimer" type="Timer" parent="." index="4"]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="area_entered" from="LeverArea3D" to="." method="_on_lever_area_3d_area_entered"]
