@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dacxv56vs731e"]
+
+[ext_resource type="PackedScene" uid="uid://bykbjc802rlqn" path="res://models/props/lever.glb" id="1_ulecd"]
+[ext_resource type="Script" path="res://objects/lever_1.gd" id="2_0xonf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xfae"]
+size = Vector3(0.564575, 0.333267, 0.385284)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wo7p7"]
+size = Vector3(1.34961, 0.342651, 1.19434)
+
+[node name="lever2" instance=ExtResource("1_ulecd")]
+script = ExtResource("2_0xonf")
+
+[node name="handle" parent="lever" index="0"]
+transform = Transform3D(0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, 7.21911e-16, 0.1, 5.77529e-15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00726318, 0.191383, 0.0266876)
+shape = SubResource("BoxShape3D_2xfae")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328674, 0)
+shape = SubResource("BoxShape3D_wo7p7")
