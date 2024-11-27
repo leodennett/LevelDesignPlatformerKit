@@ -8,6 +8,8 @@ signal reached_goal
 
 @export_subgroup("Properties")
 @export var movement_speed = 250
+@export var walk_speed = 250
+@export var sprint_speed = 400
 @export var jump_strength = 7
 
 var movement_velocity: Vector3
@@ -50,6 +52,8 @@ func _physics_process(delta):
 
 	velocity = applied_velocity
 	move_and_slide()
+	
+	
 
 	# Rotation
 
@@ -113,6 +117,12 @@ func handle_controls(delta):
 		input = input.normalized()
 
 	movement_velocity = input * movement_speed * delta
+	
+	# Sprint
+	if Input.is_action_pressed("Sprint"):
+		movement_speed = sprint_speed
+	else:
+		movement_speed = walk_speed
 
 	# Jumping
 
@@ -125,7 +135,7 @@ func handle_controls(delta):
 
 func handle_gravity(delta):
 
-	gravity += 25 * delta
+	gravity += 16 * delta
 
 	if gravity > 0 and is_on_floor():
 
@@ -144,7 +154,7 @@ func jump():
 
 	if jump_single:
 		jump_single = false;
-		jump_double = true;
+		jump_double = false;
 	else:
 		jump_double = false;
 
