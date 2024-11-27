@@ -94,7 +94,7 @@ func handle_effects(delta):
 				sound_footsteps.stream_paused = false
 				sound_footsteps.pitch_scale = speed_factor
 
-			if speed_factor > 0.75:
+			if speed_factor > 0.75 and movement_speed > 230:
 				particles_trail.emitting = true
 
 		elif animation.current_animation != "idle":
