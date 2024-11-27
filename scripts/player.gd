@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 signal coin_collected
 signal reached_goal
+signal figurine_collected
 
 @export_subgroup("Components")
 @export var view: Node3D
@@ -21,6 +22,7 @@ var previously_floored = false
 var jump_single = true
 var jump_double = true
 
+var figurines = 0
 var coins = 0
 var latest_checkpoint : Vector3
 
@@ -135,7 +137,7 @@ func handle_controls(delta):
 
 func handle_gravity(delta):
 
-	gravity += 16 * delta
+	gravity += 18 * delta
 
 	if gravity > 0 and is_on_floor():
 
@@ -165,6 +167,15 @@ func collect_coin():
 	coins += 1
 
 	coin_collected.emit(coins)
+	
+# Collect figurine
+
+func collect_figurine():
+	
+	figurines += 1
+	
+	figurine_collected.emit()
+
 	
 func touched_goal() -> void:
 	reached_goal.emit()
