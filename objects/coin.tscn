@@ -69,6 +69,7 @@ point_count = 3
 colors = PackedColorArray(0.996094, 0.910156, 0.351563, 1, 1, 1, 1, 1)
 
 [node name="coin" type="Area3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 script = ExtResource("2_gaakh")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
@@ -91,8 +92,8 @@ gravity = Vector3(0, 0, 0)
 initial_velocity_max = 1.0
 damping_min = 0.5
 damping_max = 0.5
-scale_amount_min = 0.15
-scale_amount_max = 0.15
+scale_amount_min = 0.07
+scale_amount_max = 0.07
 scale_amount_curve = SubResource("Curve_6a7l3")
 color_ramp = SubResource("Gradient_7tsk2")
 

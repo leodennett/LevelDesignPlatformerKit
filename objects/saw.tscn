@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bprrlrsrodjse"]
+[gd_scene load_steps=6 format=3 uid="uid://bprrlrsrodjse"]
 
 [ext_resource type="PackedScene" uid="uid://day542mhkw6j7" path="res://models/props/saw.glb" id="1_7cccq"]
 [ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_w12bb"]
+[ext_resource type="Script" path="res://scripts/saw_rotate.gd" id="3_j24u0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juh84"]
 size = Vector3(1, 1, 0.6)
@@ -18,6 +19,7 @@ shape = SubResource("BoxShape3D_juh84")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="2"]
 collision_mask = 2
+script = ExtResource("3_j24u0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
 shape = SubResource("BoxShape3D_gjnwj")
