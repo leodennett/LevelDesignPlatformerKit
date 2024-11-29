@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Level Design Starter Kit 3D Platformer"
 config/tags=PackedStringArray("futuregames")
-run/main_scene="res://scenes/sample.tscn"
+run/main_scene="res://scenes/LEOeditsample.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.92549, 0.92549, 0.960784, 1)
 boot_splash/image="res://splash-screen.png"
@@ -34,6 +34,12 @@ movie_writer/movie_file="C:/Users/Kenney/Desktop/video-footage.avi"
 [filesystem]
 
 import/blender/enabled=false
+
+[importer_defaults]
+
+wav={
+"edit/loop_mode": 2
+}
 
 [input]
 

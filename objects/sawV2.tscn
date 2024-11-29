@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ygp32dq13nhg"]
+
+[ext_resource type="PackedScene" uid="uid://day542mhkw6j7" path="res://models/props/saw.glb" id="1_1uimd"]
+[ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_wlu7q"]
+[ext_resource type="Script" path="res://scripts/saw_rotate.gd" id="3_ynrm7"]
+[ext_resource type="AudioStream" uid="uid://bc3aurjkw0oem" path="res://sounds/ESM_SPG_fx_trap_weapon_saw_blade_cutting_speed_metal_motor_01.wav" id="4_alcgk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_juh84"]
+size = Vector3(1.58179, 1.55273, 0.354492)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjnwj"]
+size = Vector3(1.57617, 1.58813, 0.35)
+
+[node name="saw" instance=ExtResource("1_1uimd")]
+script = ExtResource("3_ynrm7")
+
+[node name="saw" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DamageDealerArea3D" parent="." index="1" instance=ExtResource("2_wlu7q")]
+
+[node name="CollisionShape3D" parent="DamageDealerArea3D" index="0"]
+shape = SubResource("BoxShape3D_juh84")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="2"]
+collision_mask = 2
+sync_to_physics = false
+script = ExtResource("3_ynrm7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_gjnwj")
+
+[node name="SFX_SawRotate" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("4_alcgk")
+volume_db = -3.0
+unit_size = 1.0
+autoplay = true
+
+[editable path="DamageDealerArea3D"]
