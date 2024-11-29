@@ -7,13 +7,14 @@
 radius = 0.372297
 height = 0.991854
 
-[node name="Figure-collectable" type="Node3D"]
+[node name="Figure-collectable" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, 0, 0, 0)
 script = ExtResource("1_50jld")
 
 [node name="figurine-cube-detailed2" parent="." instance=ExtResource("2_dvpjt")]
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 3.72529e-09)
 shape = SubResource("CapsuleShape3D_o3o46")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

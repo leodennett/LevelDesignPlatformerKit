@@ -174,7 +174,7 @@ func collect_figurine():
 	
 	figurines += 1
 	
-	figurine_collected.emit()
+	figurine_collected.emit(figurines)
 
 	
 func touched_goal() -> void:

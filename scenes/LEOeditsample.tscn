@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cua7v1msfkf8u"]
+[gd_scene load_steps=36 format=3 uid="uid://cua7v1msfkf8u"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_sisjb"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_v7g0c"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="20_oa1tj"]
 [ext_resource type="Script" path="res://scripts/saw_rotate.gd" id="20_qkeol"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="21_47uly"]
+[ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="21_bje61"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="22_dqpbm"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="23_yrsmd"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="24_scssr"]
@@ -66,7 +67,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_16gb6"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.82673, 1.96786, 86.8175, 0, 0, 0, 0, 0, 0, -7.26516, 1.96786, 86.8175),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.96364, 1.96786, 86.8175, 0, 0, 0, 0, 0, 0, -7.21137, 1.96786, 86.8175),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -79,7 +80,7 @@ environment = ExtResource("1_sisjb")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_v7g0c")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.69263, 2.17646, 41.2447)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.04968, 3.01769, -7.27121)
 view = NodePath("../View")
 walk_speed = 180
 sprint_speed = 240
@@ -95,6 +96,126 @@ target = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 current = true
 fov = 40.0
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
+process_mode = 3
+script = ExtResource("19_fnfwf")
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 67.0
+offset_right = 313.0
+offset_bottom = 323.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("20_oa1tj")
+
+[node name="x" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 123.0
+text = "×"
+label_settings = ExtResource("21_47uly")
+
+[node name="Level Complete" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -429.0
+offset_top = 139.0
+offset_right = 429.0
+offset_bottom = 287.0
+grow_horizontal = 2
+text = "Level Complete!"
+label_settings = SubResource("LabelSettings_ri8jt")
+
+[node name="CoinsLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 123.0
+text = "0"
+label_settings = ExtResource("21_47uly")
+
+[node name="CollectableLabel" type="Label" parent="HUD/Control"]
+visible = false
+layout_mode = 0
+offset_left = 798.0
+offset_top = 57.0
+offset_right = 881.0
+offset_bottom = 101.0
+label_settings = ExtResource("21_47uly")
+
+[node name="PlayAgainButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -258.0
+offset_right = 196.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("23_yrsmd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("22_dqpbm")
+theme_override_font_sizes/font_size = 60
+text = "Play Again?"
+icon = ExtResource("24_scssr")
+flat = true
+icon_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 59.0
+offset_right = 48.5
+offset_bottom = 115.0
+grow_horizontal = 2
+text = "00"
+label_settings = SubResource("LabelSettings_x4d2s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeNameLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 22.0
+offset_right = 49.0
+offset_bottom = 78.0
+grow_horizontal = 2
+text = "TIME"
+label_settings = SubResource("LabelSettings_v6r7m")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="World" type="Node3D" parent="."]
 
@@ -212,121 +333,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79188, 1.81084, 9.13326)
 [node name="Node3D2" parent="World" instance=ExtResource("38_rlh7g")]
 transform = Transform3D(0.64019, 0, -0.768216, 0, 1, 0, 0.768216, 0, 0.64019, -6.42099, 0.5, -8.23187)
 
+[node name="Figure-collectable" parent="World" instance=ExtResource("54_feo0e")]
+transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, -9.23214, 0.592124, -8.06542)
+
+[node name="flag" parent="World" instance=ExtResource("21_bje61")]
+transform = Transform3D(0.0814862, 0, -0.996674, 0, 1, 0, 0.996674, 0, 0.0814862, -8.58779, 2.01735, 92.8287)
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, -1.72063)
 shadow_enabled = true
 shadow_opacity = 0.75
-
-[node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
-process_mode = 3
-script = ExtResource("19_fnfwf")
-
-[node name="Control" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Icon" type="TextureRect" parent="HUD/Control"]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 67.0
-offset_right = 313.0
-offset_bottom = 323.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("20_oa1tj")
-
-[node name="x" type="Label" parent="HUD/Control"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 64.0
-offset_right = 144.0
-offset_bottom = 123.0
-text = "×"
-label_settings = ExtResource("21_47uly")
-
-[node name="Level Complete" type="Label" parent="HUD/Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -429.0
-offset_top = 139.0
-offset_right = 429.0
-offset_bottom = 287.0
-grow_horizontal = 2
-text = "Level Complete!"
-label_settings = SubResource("LabelSettings_ri8jt")
-
-[node name="CoinsLabel" type="Label" parent="HUD/Control"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 144.0
-offset_top = 64.0
-offset_right = 368.0
-offset_bottom = 123.0
-text = "0"
-label_settings = ExtResource("21_47uly")
-
-[node name="PlayAgainButton" type="Button" parent="HUD/Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -196.0
-offset_top = -258.0
-offset_right = 196.0
-offset_bottom = -122.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 0
-theme = ExtResource("23_yrsmd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("22_dqpbm")
-theme_override_font_sizes/font_size = 60
-text = "Play Again?"
-icon = ExtResource("24_scssr")
-flat = true
-icon_alignment = 1
-
-[node name="TimeLabel" type="Label" parent="HUD/Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.5
-offset_top = 59.0
-offset_right = 48.5
-offset_bottom = 115.0
-grow_horizontal = 2
-text = "00"
-label_settings = SubResource("LabelSettings_x4d2s")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TimeNameLabel" type="Label" parent="HUD/Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -49.0
-offset_top = 22.0
-offset_right = 49.0
-offset_bottom = 78.0
-grow_horizontal = 2
-text = "TIME"
-label_settings = SubResource("LabelSettings_v6r7m")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="spike-block" parent="." instance=ExtResource("32_hygtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79188, 2.21163, 9.13326)
@@ -411,9 +427,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90389, 2.21356, 67.4463)
 
 [node name="spike-block-wide2" parent="." instance=ExtResource("26_7yiwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86562, 2.21356, 64.9457)
-
-[node name="coin" parent="." instance=ExtResource("17_kao75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72918, 2.24723, 66.1054)
 
 [node name="Figure-collectable" parent="." instance=ExtResource("54_feo0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31345, 1.70677, 1.09788)
@@ -569,7 +582,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.63567, 1.87939, 85.9031)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58461, 1.51735, 92.8131)
 
 [node name="checkpoint3" parent="." instance=ExtResource("12_vt6ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58461, 2.02732, 92.8131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58461, 0.100844, 92.8131)
 
 [node name="platform-large6" parent="." instance=ExtResource("5_1fa6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67331, 0.382313, 3.49305)
@@ -582,9 +595,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07831, 0.612896, -2.24546)
 
 [node name="platform-medium24" parent="." instance=ExtResource("14_xusua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07831, 0.612896, -5.6229)
-
-[node name="coin2" parent="." instance=ExtResource("17_kao75")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -6.46689, 0.503093, -6.91811)
 
 [node name="coin3" parent="." instance=ExtResource("17_kao75")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.07831, 1.12363, -5.6229)
@@ -738,6 +748,15 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.587, 1.529, 22.8206)
 
 [node name="coin51" parent="." instance=ExtResource("17_kao75")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.94734, 1.529, 24.5068)
+
+[node name="Figure-collectable2" parent="." instance=ExtResource("54_feo0e")]
+transform = Transform3D(1, 2.36717e-05, -3.72102e-05, -1.52664e-05, 0.977385, 0.211468, 4.13749e-05, -0.211468, 0.977385, 5.91434, 2, 41.3067)
+
+[node name="Figure-collectable3" parent="." instance=ExtResource("54_feo0e")]
+transform = Transform3D(-4.37114e-08, -0.211495, 0.977379, 0, 0.977379, 0.211495, -1, 9.24476e-09, -4.27226e-08, -8.11061, 2.34206, 66.0936)
+
+[node name="Figure-collectable4" parent="." instance=ExtResource("54_feo0e")]
+transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, 9.79313, 2.16757, 93.5609)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

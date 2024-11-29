@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bc3aurjkw0oem" path="res://sounds/ESM_SPG_fx_trap_weapon_saw_blade_cutting_speed_metal_motor_01.wav" id="4_alcgk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juh84"]
-size = Vector3(1.58179, 1.55273, 0.354492)
+size = Vector3(1.59399, 1.55273, 0.206055)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gjnwj"]
 size = Vector3(1.57617, 1.58813, 0.35)

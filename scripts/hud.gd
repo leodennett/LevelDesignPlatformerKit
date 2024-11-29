@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var environment: WorldEnvironment = %Environment
 @onready var time_label: Label = %TimeLabel
 @onready var time_name_label: Label = %TimeNameLabel
+@onready var collectable_label: Label = $Control/CollectableLabel
+
 
 var original_blur : bool
 var original_blur_distance : float
@@ -43,6 +45,13 @@ func start_speedrun():
 func _on_coin_collected(coins):
 	get_tree().call_group("Door", "coin_amount_updated",coins)
 	coins_label.text = str(coins)
+	
+	
+#add collectable
+func _on_collectable_collected(collectables):
+	pass
+	#get_tree().call_group("Door", "collectable_amount_updated",coins)
+	#coins_label.text = str(collectables)
 
 func _on_player_reached_goal() -> void:
 	original_blur = environment.camera_attributes.get("dof_blur_far_enabled")
