@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var respawn : bool = true
-@export var respawn_delay : float = 1
+@export var respawn_delay : float = 2
 
 @onready var platform_falling_collision_shape_3d: CollisionShape3D = %"platform-falling_collisionShape3D"
 @onready var platform_falling_2: MeshInstance3D = $"platform-falling2"
