@@ -5,6 +5,7 @@ extends Node3D
 var lever_state : bool = false
 #@onready var cooldown_timer: Timer = $CooldownTimer
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if pressed_by_default:
@@ -21,6 +22,7 @@ func _process(_delta: float) -> void:
 func _on_lever_area_3d_area_entered(_area: Area3D) -> void:
 	#if cooldown_timer.is_stopped():
 		#cooldown_timer.start()
+		AudioController.play_lever()
 		if not animation_player.is_playing():
 			if lever_state:
 				lever_state = false

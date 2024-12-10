@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dacxv56vs731e"]
+[gd_scene load_steps=8 format=3 uid="uid://dacxv56vs731e"]
 
 [ext_resource type="PackedScene" uid="uid://bykbjc802rlqn" path="res://models/props/lever.glb" id="1_ulecd"]
 [ext_resource type="Script" path="res://objects/lever_1.gd" id="2_0xonf"]
 [ext_resource type="PackedScene" uid="uid://bwpugiaevsa66" path="res://models/prototyping/models/indicator-special-arrow.glb" id="3_05nvi"]
 [ext_resource type="PackedScene" uid="uid://cgkilrmahckc0" path="res://models/prototyping/models/indicator-square-b.glb" id="4_44ouj"]
+[ext_resource type="AudioStream" uid="uid://bygrj12u37fyu" path="res://sounds/coin.ogg" id="5_ax0k6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2xfae"]
 size = Vector3(0.564575, 0.333267, 0.385284)
@@ -41,5 +42,8 @@ visible = false
 
 [node name="indicator-square-b2" parent="." index="6" instance=ExtResource("4_44ouj")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.00988752, -0.533)
+
+[node name="LeverSFX" type="AudioStreamPlayer3D" parent="." index="7"]
+stream = ExtResource("5_ax0k6")
 
 [connection signal="area_entered" from="LeverArea3D" to="." method="_on_lever_area_3d_area_entered"]

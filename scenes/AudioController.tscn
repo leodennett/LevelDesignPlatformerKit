@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtaikudnlgexa"]
+
+[ext_resource type="AudioStream" uid="uid://bygrj12u37fyu" path="res://sounds/coin.ogg" id="1_eyq02"]
+[ext_resource type="Script" path="res://audio_manager.gd" id="1_rib8i"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_rib8i")
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Coin" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Lever" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_eyq02")
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D7" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D8" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D9" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D10" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D11" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioStreamPlayer3D12" type="AudioStreamPlayer3D" parent="."]
