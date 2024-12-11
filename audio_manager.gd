@@ -15,3 +15,5 @@ func play_coin() -> void:
 	#AudioStreamRandomizer
 	#randomize()
 	#pitch_scale = randf_range(0.9, 1.1)
+func play_deathlava() -> void:
+	$DeathLava.play()

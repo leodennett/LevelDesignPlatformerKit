@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://0bt0r4irkqrh"]
+
+[ext_resource type="Shader" uid="uid://c4y8t63uaywel" path="res://_Shaders/WaterShader.tres" id="1_dcoae"]
+[ext_resource type="Script" path="res://_LavaStuff/LavaDeath.gd" id="1_md6qu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_titv1"]
+size = Vector3(49.9924, 15.04, 49.959)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1e8p"]
+render_priority = 0
+shader = ExtResource("1_dcoae")
+shader_parameter/ColorParameter = Color(0.960784, 0.090196, 0.121569, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dsyxp"]
+material = SubResource("ShaderMaterial_c1e8p")
+size = Vector3(50, 15, 50)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_md6qu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0180163, 0)
+shape = SubResource("BoxShape3D_titv1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_dsyxp")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

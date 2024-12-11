@@ -1,4 +1,5 @@
 extends Area3D
+@onready var sfx_coin: AudioStreamPlayer3D = $SFX_Coin
 
 var time := 0.0
 var grabbed := false
@@ -10,7 +11,8 @@ func _on_body_entered(body):
 		
 		body.collect_coin()
 		
-		AudioController.play_coin() # Play sound
+		$SFX_Coin.play()
+		#AudioController.play_coin() # Play sound
 		
 		$Mesh.queue_free() # Make invisible
 		$Particles.emitting = false # Stop emitting stars

@@ -30,6 +30,8 @@ var latest_checkpoint : Vector3
 @onready var sound_footsteps = $SoundFootsteps
 @onready var model = $Character
 @onready var animation = $Character/AnimationPlayer
+@onready var sfx_lava_death: AudioStreamPlayer3D = $SFX_LavaDeath
+
 
 # Functions
 
@@ -186,3 +188,5 @@ func player_died() -> void:
 func reached_checkpoint(checkpoint_pos : Vector3) -> void:
 	latest_checkpoint = checkpoint_pos
 	
+func touched_lava() -> void:
+	$SFX_LavaDeath.play()

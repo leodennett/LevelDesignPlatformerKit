@@ -2,6 +2,8 @@ extends Node3D
 @export var target : Node3D
 @export var pressed_by_default : bool
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var lever_sfx: AudioStreamPlayer3D = $LeverSFX
+
 var lever_state : bool = false
 #@onready var cooldown_timer: Timer = $CooldownTimer
 
@@ -20,9 +22,11 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_lever_area_3d_area_entered(_area: Area3D) -> void:
+	
 	#if cooldown_timer.is_stopped():
 		#cooldown_timer.start()
-		AudioController.play_lever()
+		#AudioController.play_lever()
+		$LeverSFX.play()
 		if not animation_player.is_playing():
 			if lever_state:
 				lever_state = false
@@ -33,3 +37,4 @@ func _on_lever_area_3d_area_entered(_area: Area3D) -> void:
 			
 			if target and target.has_method("receive_input"):
 				target.receive_input(lever_state)
+				print("lever")
