@@ -1,5 +1,12 @@
 extends Node
 
+func _ready():
+	print("test")
+	#play_music()
+
+#func play_music() -> void:
+	#$BGM2.play()
+
 func play_lever() -> void:
 	$Lever.play()
 	

@@ -1,22 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtaikudnlgexa"]
+[gd_scene load_steps=5 format=3 uid="uid://dtaikudnlgexa"]
 
 [ext_resource type="AudioStream" uid="uid://bygrj12u37fyu" path="res://sounds/coin.ogg" id="1_eyq02"]
 [ext_resource type="Script" path="res://audio_manager.gd" id="1_rib8i"]
+[ext_resource type="AudioStream" uid="uid://d4jwpthe3yha" path="res://_Audio Files/TechLevelBGMDec24 V1.wav" id="3_e85gd"]
+[ext_resource type="AudioStream" uid="uid://cko3em7xury11" path="res://sounds/fall.ogg" id="4_fimtm"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_rib8i")
 
-[node name="Music" type="AudioStreamPlayer3D" parent="."]
-
 [node name="Coin" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_eyq02")
 
 [node name="Lever" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_eyq02")
 max_distance = 50.0
 
-[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e85gd")
 
-[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="."]
+[node name="BGM2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_fimtm")
 
 [node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="."]
 
