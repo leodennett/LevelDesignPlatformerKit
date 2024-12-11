@@ -284,6 +284,7 @@ transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -
 light_color = Color(0.928846, 0.580472, 0.285341, 1)
 shadow_enabled = true
 shadow_opacity = 0.75
+directional_shadow_max_distance = 0.0
 
 [node name="player_kill_volume" parent="World" instance=ExtResource("10_tqq0s")]
 
