@@ -3,6 +3,8 @@ extends Node3D
 @export var jewel_material : StandardMaterial3D
 @export var activated_color : Color
 @onready var jewel_mesh: MeshInstance3D = $mesh_offset/jewel/jewel
+@onready var sfx_checkpoint: AudioStreamPlayer3D = $SFX_Checkpoint
+
 var time := 0.0
 var touched : bool
 var sound_has_played = false
@@ -31,4 +33,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		jewel_mesh.get_surface_override_material(0).albedo_color = activated_color
 	if !sound_has_played:
 		sound_has_played = true
-		Audio.play("res://sounds/coin.ogg")
+		$SFX_Checkpoint.play()

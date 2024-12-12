@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://rjh4ifidqrfp"]
+[gd_scene load_steps=5 format=3 uid="uid://rjh4ifidqrfp"]
 
 [ext_resource type="PackedScene" uid="uid://c5vgh1v6juur0" path="res://models/core_models/platform-medium.glb" id="1_ihbp6"]
+[ext_resource type="PackedScene" uid="uid://dmvr021y87ooo" path="res://Blender Meshes/SquarePlatform2.blend" id="2_ip8xg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tyv4w"]
 size = Vector3(2.98657, 0.465332, 3.00879)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akqb4"]
+size = Vector3(2.90625, 11.8779, 2.91211)
 
 [node name="platform-medium" instance=ExtResource("1_ihbp6")]
 
@@ -11,4 +15,16 @@ size = Vector3(2.98657, 0.465332, 3.00879)
 
 [node name="platform-medium2_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="platform-medium2#StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.267334, 0)
+visible = false
 shape = SubResource("BoxShape3D_tyv4w")
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platform-medium2#StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.44141, 0)
+shape = SubResource("BoxShape3D_akqb4")
+
+[node name="platform-medium2" parent="." index="1"]
+visible = false
+
+[node name="SquarePlatform2" parent="." index="2" instance=ExtResource("2_ip8xg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.62127, 0)

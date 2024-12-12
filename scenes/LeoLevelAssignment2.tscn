@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dbbrv5r1d22j4"]
+[gd_scene load_steps=56 format=3 uid="uid://dbbrv5r1d22j4"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ktxu7"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_vletb"]
@@ -32,6 +32,11 @@
 [ext_resource type="Script" path="res://scripts/saw_rotateVERT.gd" id="29_yeuyg"]
 [ext_resource type="Shader" uid="uid://c4y8t63uaywel" path="res://_Shaders/WaterShader.tres" id="30_kyym6"]
 [ext_resource type="PackedScene" uid="uid://dc6guvxc2skh6" path="res://Blender Meshes/cube.blend" id="31_p44de"]
+[ext_resource type="PackedScene" uid="uid://dgwjgp83wqy06" path="res://objects/L_falling_platform.tscn" id="33_np1j0"]
+[ext_resource type="PackedScene" uid="uid://d2aou46r28pil" path="res://Blender Meshes/BackgroundRock1.blend" id="34_1ncgy"]
+[ext_resource type="PackedScene" uid="uid://d2qj8ognd8kll" path="res://Blender Meshes/BackgroundRock2.blend" id="35_kk1dd"]
+[ext_resource type="PackedScene" uid="uid://dcyvrw7frc5qf" path="res://Blender Meshes/BackgroundRock3.blend" id="36_g4al2"]
+[ext_resource type="PackedScene" uid="uid://bctq6g5bc1uho" path="res://Blender Meshes/SquarePlatform1.blend" id="37_2lvai"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -287,18 +292,6 @@ shadow_opacity = 0.75
 directional_shadow_max_distance = 0.0
 
 [node name="player_kill_volume" parent="World" instance=ExtResource("10_tqq0s")]
-
-[node name="cube8" parent="World" instance=ExtResource("11_nrw30")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5488, 1.10741, -2.666)
-
-[node name="cube9" parent="World" instance=ExtResource("11_nrw30")]
-transform = Transform3D(1.27593, -0.401864, 0.422933, 0.471408, 1.30937, -0.178025, -0.343721, 0.304009, 1.32582, 10.5839, 1.37146, -4.1932)
-
-[node name="cube10" parent="World" instance=ExtResource("11_nrw30")]
-transform = Transform3D(1.32811, 0.370441, 0.259369, -0.293866, 1.3186, -0.37854, -0.34372, 0.30401, 1.32582, 18.5866, 2.03819, -7.93707)
-
-[node name="cube13" parent="World" instance=ExtResource("11_nrw30")]
-transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241, -0.974547, 1.4522, 2.05595, 14.8573, 2.03819, -8.24191)
 
 [node name="cube14" parent="World" instance=ExtResource("11_nrw30")]
 transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241, -0.974547, 1.4522, 2.05595, -26.1036, 2.03819, 7.83702)
@@ -1257,6 +1250,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.92776, 0.5, -7.23957)
 [node name="lever6" parent="." instance=ExtResource("26_k78w3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3475, 0.54789, -7.39497)
 pressed_by_default = true
+
+[node name="Node3D2" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D3" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D4" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D5" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D6" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D7" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D8" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D9" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D10" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D11" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="Node3D12" parent="." instance=ExtResource("33_np1j0")]
+
+[node name="BackgroundRock1" parent="." instance=ExtResource("34_1ncgy")]
+transform = Transform3D(-0.42064, 0, 0.907228, 0, 1, 0, -0.907228, 0, -0.42064, 12.4388, 0, -15.6723)
+
+[node name="BackgroundRock5" parent="." instance=ExtResource("34_1ncgy")]
+transform = Transform3D(-2.1032, 0, 4.53614, 0, 5, 0, -4.53614, 0, -2.1032, 51.9973, 0.870378, -5.80243)
+
+[node name="BackgroundRock2" parent="." instance=ExtResource("34_1ncgy")]
+transform = Transform3D(-0.768974, 0.549036, -0.327473, 0.498274, 0.835673, 0.231027, 0.400502, 0.0144825, -0.916181, 8.94164, 0, 5.58898)
+
+[node name="BackgroundRock3" parent="." instance=ExtResource("35_kk1dd")]
+transform = Transform3D(-0.831848, 0, 0.555004, 0, 1, 0, -0.555004, 0, -0.831848, 3.8138, -4.81209, 11.779)
+
+[node name="BackgroundRock4" parent="." instance=ExtResource("36_g4al2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.343962, -0.362891, 0, 0.362891, 0.343962, 18.1379, -3.16217, -31.6393)
+
+[node name="SquarePlatform1" parent="." instance=ExtResource("37_2lvai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66605, -0.398647, -4.45408)
+
+[node name="SquarePlatform2" parent="." instance=ExtResource("37_2lvai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66605, -2.39865, -11.4541)
+
+[node name="SquarePlatform3" parent="." instance=ExtResource("37_2lvai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66605, -4.39865, -18.4541)
+
+[node name="SquarePlatform4" parent="." instance=ExtResource("37_2lvai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66605, -4.39865, -22.4541)
+
+[node name="Figure-collectable" parent="." instance=ExtResource("28_kj08x")]
+transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, -9.02829, 0.499996, -7.30206)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

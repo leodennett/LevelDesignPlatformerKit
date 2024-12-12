@@ -31,6 +31,8 @@ var latest_checkpoint : Vector3
 @onready var model = $Character
 @onready var animation = $Character/AnimationPlayer
 @onready var sfx_lava_death: AudioStreamPlayer3D = $SFX_LavaDeath
+@onready var sfx_spike_death: AudioStreamPlayer3D = $SFX_SpikeDeath
+@onready var sfx_respawn: AudioStreamPlayer3D = $SFX_Respawn
 
 
 # Functions
@@ -184,9 +186,14 @@ func touched_goal() -> void:
 
 func player_died() -> void:
 	global_position = latest_checkpoint
+	$SFX_Respawn.play()
+	print("playerdied")
 	
 func reached_checkpoint(checkpoint_pos : Vector3) -> void:
 	latest_checkpoint = checkpoint_pos
 	
 func touched_lava() -> void:
 	$SFX_LavaDeath.play()
+
+func touched_spike() -> void:
+	$SFX_SpikeDeath.play()

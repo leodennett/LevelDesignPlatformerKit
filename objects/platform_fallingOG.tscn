@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://c8up71en5djgm"]
+[gd_scene load_steps=12 format=4 uid="uid://5qtd6uqljygo"]
 
-[ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="1_gkggt"]
-[ext_resource type="Script" path="res://objects/platform_falling.gd" id="2_6ganw"]
-[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="3_uuuje"]
-[ext_resource type="PackedScene" uid="uid://dc6guvxc2skh6" path="res://Blender Meshes/cube.blend" id="4_8bjkn"]
+[ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="1_3ny76"]
+[ext_resource type="Script" path="res://objects/platform_falling.gd" id="2_k8jjw"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="3_qs3nx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t551e"]
 size = Vector3(2, 0.1, 2)
@@ -14,7 +13,7 @@ data = PackedVector3Array(-0.9, 0, -0.72, -1, 0.2, -0.8, -1, 0.2, 0.8, -1, 0.2, 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8q84p"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("3_uuuje")
+albedo_texture = ExtResource("3_qs3nx")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_subup"]
 _surfaces = [{
@@ -101,8 +100,8 @@ _data = {
 "respawn": SubResource("Animation_4ywbb")
 }
 
-[node name="platform-falling" instance=ExtResource("1_gkggt")]
-script = ExtResource("2_6ganw")
+[node name="platform-falling" instance=ExtResource("1_3ny76")]
+script = ExtResource("2_k8jjw")
 
 [node name="Area3D" type="Area3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
@@ -123,8 +122,5 @@ mesh = SubResource("ArrayMesh_6gl6g")
 libraries = {
 "": SubResource("AnimationLibrary_mmy7m")
 }
-
-[node name="cube" parent="." index="4" instance=ExtResource("4_8bjkn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00495589, 0.175921, 0.0109074)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

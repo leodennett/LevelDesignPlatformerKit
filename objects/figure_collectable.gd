@@ -1,18 +1,20 @@
 extends Area3D
 
+@onready var sfx_collectable: AudioStreamPlayer3D = $SFX_Collectable
 
 var time := 0.0
 var grabbed := false
 
 # Collecting Figurine
+func _on_body_entered(body: Node3D) -> void:
+	
 
-func _on_body_entered(body):
 	if body.has_method("collect_coin") and !grabbed:
 		
 		print("statue collected")
 		body.collect_figurine()
 		
-		Audio.play("res://sounds/coin.ogg") # Play sound
+		$SFX_Collectable.play() # Play sound
 		
 		queue_free() # Make invisible
 		#$Particles.emitting = false # Stop emitting stars
