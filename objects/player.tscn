@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=14 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ffboj"]
 [ext_resource type="PackedScene" uid="uid://c0e27836xgmhi" path="res://objects/character.tscn" id="2_nero3"]
@@ -6,7 +6,9 @@
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_mvhqy"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 [ext_resource type="AudioStream" uid="uid://clnacckfykrnq" path="res://_Audio Files/LavaDeath_1.wav" id="6_3oeds"]
-[ext_resource type="AudioStream" uid="uid://tm67em0trdvf" path="res://_Audio Files/Lever_1.wav" id="7_4vai4"]
+[ext_resource type="AudioStream" uid="uid://b3ac24f0kr5f5" path="res://_Audio Files/SpikeDeath_1.wav" id="7_wy16p"]
+[ext_resource type="AudioStream" uid="uid://xpikppcoj12r" path="res://_Audio Files/Respawn_1.wav" id="8_m6x2y"]
+[ext_resource type="AudioStream" uid="uid://bfe0b0e5y3pjd" path="res://_Audio Files/Jump_1.wav" id="9_t88uw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -78,9 +80,15 @@ autoplay = true
 stream = ExtResource("6_3oeds")
 
 [node name="SFX_SpikeDeath" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_3oeds")
+stream = ExtResource("7_wy16p")
 
 [node name="SFX_Respawn" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("7_4vai4")
+stream = ExtResource("8_m6x2y")
+volume_db = -1.839
+
+[node name="SFX_Jump" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_t88uw")
+
+[node name="SFX_Land" type="AudioStreamPlayer3D" parent="."]
 
 [editable path="Character"]

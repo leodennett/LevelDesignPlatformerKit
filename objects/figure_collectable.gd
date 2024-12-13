@@ -11,10 +11,11 @@ func _on_body_entered(body: Node3D) -> void:
 
 	if body.has_method("collect_coin") and !grabbed:
 		
+		$SFX_Collectable.play()
 		print("statue collected")
 		body.collect_figurine()
 		
-		$SFX_Collectable.play() # Play sound
+		# Play sound
 		
 		queue_free() # Make invisible
 		#$Particles.emitting = false # Stop emitting stars

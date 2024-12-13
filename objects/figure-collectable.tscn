@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d36wl6fvmw3g1"]
+[gd_scene load_steps=5 format=3 uid="uid://d36wl6fvmw3g1"]
 
 [ext_resource type="Script" path="res://objects/figure_collectable.gd" id="1_50jld"]
 [ext_resource type="PackedScene" uid="uid://ikhnhkkqet3v" path="res://models/prototyping/models/figurine-cube-detailed.glb" id="2_dvpjt"]
+[ext_resource type="AudioStream" uid="uid://bw1q18xu28bhn" path="res://_Audio Files/Coin_1.wav" id="3_o3nwh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o3o46"]
 radius = 0.372297
@@ -18,5 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 3.72529e-09)
 shape = SubResource("CapsuleShape3D_o3o46")
 
 [node name="SFX_Collectable" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_o3nwh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

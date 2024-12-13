@@ -1303,6 +1303,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66605, -4.39865, -22.4541)
 [node name="Figure-collectable" parent="." instance=ExtResource("28_kj08x")]
 transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, -9.02829, 0.499996, -7.30206)
 
+[node name="spike-block13" parent="." instance=ExtResource("21_qbw30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50954, 0.869327, -6.61584)
+
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]

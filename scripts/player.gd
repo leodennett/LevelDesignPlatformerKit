@@ -13,6 +13,8 @@ signal figurine_collected
 @export var sprint_speed = 400
 @export var jump_strength = 7
 
+var death_speed = 0
+
 var movement_velocity: Vector3
 var rotation_direction: float
 var gravity = 0
@@ -33,6 +35,8 @@ var latest_checkpoint : Vector3
 @onready var sfx_lava_death: AudioStreamPlayer3D = $SFX_LavaDeath
 @onready var sfx_spike_death: AudioStreamPlayer3D = $SFX_SpikeDeath
 @onready var sfx_respawn: AudioStreamPlayer3D = $SFX_Respawn
+@onready var sfx_jump: AudioStreamPlayer3D = $SFX_Jump
+@onready var sfx_land: AudioStreamPlayer3D = $SFX_Land
 
 
 # Functions
@@ -76,7 +80,7 @@ func _physics_process(delta):
 
 	if is_on_floor() and gravity > 2 and !previously_floored:
 		model.scale = Vector3(1.25, 0.75, 1.25)
-		Audio.play("res://sounds/land.ogg")
+		$SFX_Land.play()
 
 	previously_floored = is_on_floor()
 
@@ -152,7 +156,7 @@ func handle_gravity(delta):
 
 func jump():
 
-	Audio.play("res://sounds/jump.ogg")
+	$SFX_Jump.play()
 
 	gravity = -jump_strength
 
@@ -197,3 +201,4 @@ func touched_lava() -> void:
 
 func touched_spike() -> void:
 	$SFX_SpikeDeath.play()
+	

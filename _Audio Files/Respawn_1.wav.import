@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xpikppcoj12r"
+path="res://.godot/imported/Respawn_1.wav-d42d7e3c665684e28c115f8d40eea9b5.sample"
+
+[deps]
+
+source_file="res://_Audio Files/Respawn_1.wav"
+dest_files=["res://.godot/imported/Respawn_1.wav-d42d7e3c665684e28c115f8d40eea9b5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

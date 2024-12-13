@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_04qt4"]
 [ext_resource type="Script" path="res://objects/coin.gd" id="2_gaakh"]
 [ext_resource type="Texture2D" uid="uid://bs6puxrivhkk2" path="res://sprites/particle.png" id="3_xl1k0"]
-[ext_resource type="AudioStream" uid="uid://bygrj12u37fyu" path="res://sounds/coin.ogg" id="4_g8wob"]
+[ext_resource type="AudioStream" uid="uid://bw1q18xu28bhn" path="res://_Audio Files/Coin_1.wav" id="4_t83fl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct61v"]
 resource_name = "colormap"
@@ -99,6 +99,7 @@ scale_amount_curve = SubResource("Curve_6a7l3")
 color_ramp = SubResource("Gradient_7tsk2")
 
 [node name="SFX_Coin" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_g8wob")
+stream = ExtResource("4_t83fl")
+volume_db = -4.038
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
