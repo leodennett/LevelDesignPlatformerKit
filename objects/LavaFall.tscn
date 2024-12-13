@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bapgqd28q8hqn"]
+
+[ext_resource type="Shader" uid="uid://c61po8g5wbudj" path="res://_Shaders/WaterShaderFall.tres" id="1_xjdjn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yabcd"]
+render_priority = 0
+shader = ExtResource("1_xjdjn")
+shader_parameter/ColorParameter = Color(0.960784, 0.090196, 0.121569, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_adeqm"]
+material = SubResource("ShaderMaterial_yabcd")
+size = Vector2(50, 50)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_adeqm")
