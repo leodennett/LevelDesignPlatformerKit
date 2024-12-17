@@ -78,6 +78,7 @@ autoplay = true
 
 [node name="SFX_LavaDeath" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_3oeds")
+volume_db = 1.0
 
 [node name="SFX_SpikeDeath" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_wy16p")
