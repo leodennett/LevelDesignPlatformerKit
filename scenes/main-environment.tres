@@ -12,7 +12,7 @@ sky_material = SubResource("ProceduralSkyMaterial_lg8b7")
 [resource]
 background_mode = 1
 background_color = Color(0.472159, 0.295337, 0.0861893, 1)
-background_energy_multiplier = 0.5
+background_energy_multiplier = 0.6
 sky = SubResource("Sky_7bk1c")
 ambient_light_source = 2
 ambient_light_color = Color(0.916371, 0.621495, 0.320245, 1)
@@ -30,5 +30,5 @@ glow_intensity = 0.5
 glow_strength = 0.5
 fog_enabled = true
 fog_light_color = Color(0.726964, 0.489733, 0.289672, 1)
-fog_density = 0.0475
+fog_density = 0.03
 volumetric_fog_enabled = true
