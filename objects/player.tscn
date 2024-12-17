@@ -7,8 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 [ext_resource type="AudioStream" uid="uid://clnacckfykrnq" path="res://_Audio Files/LavaDeath_1.wav" id="6_3oeds"]
 [ext_resource type="AudioStream" uid="uid://b3ac24f0kr5f5" path="res://_Audio Files/SpikeDeath_1.wav" id="7_wy16p"]
-[ext_resource type="AudioStream" uid="uid://xpikppcoj12r" path="res://_Audio Files/Respawn_1.wav" id="8_m6x2y"]
-[ext_resource type="AudioStream" uid="uid://bfe0b0e5y3pjd" path="res://_Audio Files/Jump_1.wav" id="9_t88uw"]
+[ext_resource type="AudioStream" uid="uid://cgruw3i5yyqtc" path="res://_Audio Files/Respawn_2.wav" id="8_0243k"]
+[ext_resource type="AudioStream" uid="uid://c4vuis0aoeofm" path="res://_Audio Files/Jump_2.wav" id="9_143m0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -83,11 +83,11 @@ stream = ExtResource("6_3oeds")
 stream = ExtResource("7_wy16p")
 
 [node name="SFX_Respawn" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_m6x2y")
+stream = ExtResource("8_0243k")
 volume_db = -1.839
 
 [node name="SFX_Jump" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_t88uw")
+stream = ExtResource("9_143m0")
 
 [node name="SFX_Land" type="AudioStreamPlayer3D" parent="."]
 

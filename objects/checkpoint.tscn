@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/check_point.gd" id="1_tieuc"]
 [ext_resource type="PackedScene" uid="uid://73nktay1f7dh" path="res://models/props/jewel.glb" id="2_025fv"]
-[ext_resource type="AudioStream" uid="uid://bygrj12u37fyu" path="res://sounds/coin.ogg" id="3_2bvrr"]
+[ext_resource type="AudioStream" uid="uid://drx5ik5pyjjic" path="res://_Audio Files/Checkpoint_1.wav" id="3_k6iwo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15vf6"]
 albedo_color = Color(1, 0.368627, 0.607843, 1)
@@ -40,7 +40,7 @@ collision_mask = 2
 shape = SubResource("BoxShape3D_ekyr4")
 
 [node name="SFX_Checkpoint" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_2bvrr")
+stream = ExtResource("3_k6iwo")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 

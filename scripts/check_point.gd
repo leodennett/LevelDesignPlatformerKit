@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(delta):
 	if not touched:
 		jewel_container.rotate_y(delta) # Rotation
-		jewel_container.position.y += (cos(time * 3) * 1) * delta # Sine movement
+		jewel_container.position.y += (cos(time * 5) * 0.5) * delta # Sine movement
 		
 		time += delta
 
