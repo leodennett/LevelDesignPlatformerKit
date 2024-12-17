@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dgwjgp83wqy06"]
+[gd_scene load_steps=17 format=3 uid="uid://dgwjgp83wqy06"]
 
 [ext_resource type="PackedScene" uid="uid://dc6guvxc2skh6" path="res://Blender Meshes/cube.blend" id="1_15vsp"]
 [ext_resource type="Script" path="res://objects/l_falling_platform.gd" id="1_24xvd"]
@@ -18,20 +18,15 @@ animation = &"Regenerate"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_84win"]
 animation = &"Static"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rvg66"]
-animation = &"Static"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y3ilh"]
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8385y"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_la2ue"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dgwjf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_otl81"]
+switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_johdq"]
@@ -39,15 +34,14 @@ states/Falling/node = SubResource("AnimationNodeAnimation_w2w3r")
 states/Falling/position = Vector2(544, 89)
 states/Regenerate/node = SubResource("AnimationNodeAnimation_kmpk0")
 states/Regenerate/position = Vector2(688, 174)
-states/Static/node = SubResource("AnimationNodeAnimation_rvg66")
-states/Static/position = Vector2(300, 150)
+states/Start/position = Vector2(201, 100)
 "states/Static 2/node" = SubResource("AnimationNodeAnimation_84win")
 "states/Static 2/position" = Vector2(467, 176)
-transitions = ["Falling", "Regenerate", SubResource("AnimationNodeStateMachineTransition_y3ilh"), "Start", "Static", SubResource("AnimationNodeStateMachineTransition_8385y"), "Regenerate", "Static 2", SubResource("AnimationNodeStateMachineTransition_la2ue"), "Static 2", "Falling", SubResource("AnimationNodeStateMachineTransition_dgwjf")]
+transitions = ["Falling", "Regenerate", SubResource("AnimationNodeStateMachineTransition_y3ilh"), "Static 2", "Falling", SubResource("AnimationNodeStateMachineTransition_dgwjf"), "Regenerate", "Static 2", SubResource("AnimationNodeStateMachineTransition_otl81")]
 
 [sub_resource type="Animation" id="Animation_k0y16"]
 resource_name = "Falling"
-length = 2.0
+length = 4.0
 step = 0.05
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -55,14 +49,14 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.00241745, 1, 0, 0, 0, 0.0528486, 1, 0, -0.05, 0.05, 0.102417, 1, 0, -0.1, 0, 0.152417, 1, 0, -0.15, -0.05, 0.202417, 1, 0, -0.2, 0, 0.252417, 1, 0, -0.25, 0.05, 0.301612, 1, 0, -0.3, 0, 0.351612, 1, 0, -0.35, -0.05, 0.401612, 1, 0, -0.4, 0, 0.450806, 1, 0, -0.45, 0.05, 0.500806, 1, 0, -0.5, 0, 0.550806, 1, 0, -0.55, -0.05, 0.600806, 1, 0, -0.6, 0, 0.650806, 1, 0, -0.65, 0.05, 0.7, 1, 0, -0.7, 0, 0.75, 1, 0, -0.75, -0.05, 0.8, 1, 0, -0.8, 0, 0.85, 1, 0, -0.85, 0.05, 0.9, 1, 0, -0.9, 0, 0.95, 1, 0, -0.95, -0.05, 1, 1, 0, -1, 0, 1.05, 1, 0, -1.05, 0.05, 1.1, 1, 0, -1.1, 0, 1.15, 1, 0, -1.15, -0.05, 1.2, 1, 0, -1.2, 0, 1.25, 1, 0, -1.25, 0.05, 1.3, 1, 0, -1.3, 0, 1.35, 1, 0, -1.35, -0.05, 1.4, 1, 0, -1.4, 0, 1.45, 1, 0, -1.45, 0.05, 1.5, 1, 0, -1.5, 0, 1.55, 1, 0, -1.55, -0.05, 1.6, 1, 0, -1.6, 0, 1.65, 1, 0, -1.65, 0.05, 1.7, 1, 0, -1.7, 0, 1.75, 1, 0, -1.75, -0.05, 1.8, 1, 0, -1.8, 0, 1.85, 1, 0, -1.85, 0.05, 1.9, 1, 0, -1.9, 0, 1.95, 1, 0, -1.95, -0.05, 2, 1, 0, -2, 0)
+tracks/0/keys = PackedFloat32Array(0.00241745, 1, 0, 0, 0, 0.0528486, 1, 0, -0.05, 0.05, 0.102417, 1, 0, -0.1, 0, 0.152417, 1, 0, -0.15, -0.05, 0.202417, 1, 0, -0.2, 0, 0.252417, 1, 0, -0.25, 0.05, 0.301612, 1, 0, -0.3, 0, 0.351612, 1, 0, -0.35, -0.05, 0.401612, 1, 0, -0.4, 0, 0.450806, 1, 0, -0.45, 0.05, 0.500806, 1, 0, -0.5, 0, 0.550806, 1, 0, -0.55, -0.05, 0.600806, 1, 0, -0.6, 0, 0.650806, 1, 0, -0.65, 0.05, 0.7, 1, 0, -0.7, 0, 0.75, 1, 0, -0.75, -0.05, 0.8, 1, 0, -0.8, 0, 0.85, 1, 0, -0.85, 0.05, 0.9, 1, 0, -0.9, 0, 0.95, 1, 0, -0.95, -0.05, 1, 1, 0, -1, 0, 1.05, 1, 0, -1.05, 0.05, 1.1, 1, 0, -1.1, 0, 1.15, 1, 0, -1.15, -0.05, 1.2, 1, 0, -1.2, 0, 1.25, 1, 0, -1.25, 0.05, 1.3, 1, 0, -1.3, 0, 1.35, 1, 0, -1.35, -0.05, 1.4, 1, 0, -1.4, 0, 1.45, 1, 0, -1.45, 0.05, 1.5, 1, 0, -1.5, 0, 1.55, 1, 0, -1.55, -0.05, 1.6, 1, 0, -1.6, 0, 1.65, 1, 0, -1.65, 0.05, 1.7, 1, 0, -1.7, 0, 1.75, 1, 0, -1.75, -0.05, 1.8, 1, 0, -1.8, 0, 1.85, 1, 0, -1.85, 0.05, 1.9, 1, 0, -1.9, 0, 1.95, 1, 0, -1.95, -0.05, 2, 1, 0, -2, 0, 4, 1, 0, 0, 0)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("../../StaticBody3D/CollisionShape3D2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.0504312, 1, 0, -0.05, 0.05, 0.1, 1, 0, -0.1, 0, 0.15, 1, 0, -0.15, -0.05, 0.2, 1, 0, -0.2, 0, 0.25, 1, 0, -0.25, 0.05, 0.3, 1, 0, -0.3, 0, 0.35, 1, 0, -0.35, -0.05, 0.4, 1, 0, -0.4, 0, 0.45, 1, 0, -0.45, 0.05, 0.5, 1, 0, -0.5, 0, 0.55, 1, 0, -0.55, -0.05, 0.6, 1, 0, -0.6, 0, 0.65, 1, 0, -0.65, 0.05, 0.7, 1, 0, -0.7, 0, 0.75, 1, 0, -0.75, -0.05, 0.8, 1, 0, -0.8, 0, 0.85, 1, 0, -0.85, 0.05, 0.9, 1, 0, -0.9, 0, 0.95, 1, 0, -0.95, -0.05, 1, 1, 0, 0, 0, 1.05, 1, 0, -1.05, 0.05, 1.1, 1, 0, -1.1, 0, 1.15, 1, 0, -1.15, -0.05, 1.2, 1, 0, -1.2, 0, 1.25, 1, 0, -1.25, 0.05, 1.3, 1, 0, -1.3, 0, 1.35, 1, 0, -1.35, -0.05, 1.4, 1, 0, -1.4, 0, 1.45, 1, 0, -1.45, 0.05, 1.5, 1, 0, -1.5, 0, 1.55, 1, 0, -1.55, -0.05, 1.6, 1, 0, -1.6, 0, 1.65, 1, 0, -1.65, 0.05, 1.7, 1, 0, -1.7, 0, 1.75, 1, 0, -1.75, -0.05, 1.8, 1, 0, -1.8, 0, 1.85, 1, 0, -1.85, 0.05, 1.9, 1, 0, -1.9, 0, 1.95, 1, 0, -1.95, -0.05, 2, 1, 0, -2, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.0504312, 1, 0, -0.05, 0.05, 0.1, 1, 0, -0.1, 0, 0.15, 1, 0, -0.15, -0.05, 0.2, 1, 0, -0.2, 0, 0.25, 1, 0, -0.25, 0.05, 0.3, 1, 0, -0.3, 0, 0.35, 1, 0, -0.35, -0.05, 0.4, 1, 0, -0.4, 0, 0.45, 1, 0, -0.45, 0.05, 0.5, 1, 0, -0.5, 0, 0.55, 1, 0, -0.55, -0.05, 0.6, 1, 0, -0.6, 0, 0.65, 1, 0, -0.65, 0.05, 0.7, 1, 0, -0.7, 0, 0.75, 1, 0, -0.75, -0.05, 0.8, 1, 0, -0.8, 0, 0.85, 1, 0, -0.85, 0.05, 0.9, 1, 0, -0.9, 0, 0.95, 1, 0, -0.95, -0.05, 1, 1, 0, -1, 0, 1.05, 1, 0, -1.05, 0.05, 1.1, 1, 0, -1.1, 0, 1.15, 1, 0, -1.15, -0.05, 1.2, 1, 0, -1.2, 0, 1.25, 1, 0, -1.25, 0.05, 1.3, 1, 0, -1.3, 0, 1.35, 1, 0, -1.35, -0.05, 1.4, 1, 0, -1.4, 0, 1.45, 1, 0, -1.45, 0.05, 1.5, 1, 0, -1.5, 0, 1.55, 1, 0, -1.55, -0.05, 1.6, 1, 0, -1.6, 0, 1.65, 1, 0, -1.65, 0.05, 1.7, 1, 0, -1.7, 0, 1.75, 1, 0, -1.75, -0.05, 1.8, 1, 0, -1.8, 0, 1.85, 1, 0, -1.85, 0.05, 1.9, 1, 0, -1.9, 0, 1.95, 1, 0, -1.95, -0.05, 2, 1, 0, -2, 0, 4, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_q5t5l"]
 length = 0.001
@@ -80,6 +74,13 @@ tracks/1/path = NodePath("../../StaticBody3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../StaticBody3D/CollisionShape3D2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_wy6ju"]
 resource_name = "Regenerate"
@@ -143,10 +144,10 @@ shape = SubResource("BoxShape3D_g3apx")
 [node name="AnimationTree" type="AnimationTree" parent="Area3D"]
 root_node = NodePath("../cube")
 tree_root = SubResource("AnimationNodeStateMachine_johdq")
-anim_player = NodePath("AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D/AnimationTree"]
-root_node = NodePath("../../cube")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+root_node = NodePath("../cube")
 libraries = {
 "": SubResource("AnimationLibrary_vifk7")
 }

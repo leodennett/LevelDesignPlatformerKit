@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d36wl6fvmw3g1"]
+[gd_scene load_steps=6 format=3 uid="uid://d36wl6fvmw3g1"]
 
 [ext_resource type="Script" path="res://objects/figure_collectable.gd" id="1_50jld"]
 [ext_resource type="PackedScene" uid="uid://ikhnhkkqet3v" path="res://models/prototyping/models/figurine-cube-detailed.glb" id="2_dvpjt"]
-[ext_resource type="AudioStream" uid="uid://bw1q18xu28bhn" path="res://_Audio Files/Coin_1.wav" id="3_o3nwh"]
+[ext_resource type="AudioStream" uid="uid://dknkwhbx0xuiu" path="res://_Audio Files/Collectable_1.wav" id="3_d83sk"]
+[ext_resource type="AudioStream" uid="uid://drx5ik5pyjjic" path="res://_Audio Files/Checkpoint_1.wav" id="4_b8iy4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o3o46"]
 radius = 0.372297
@@ -12,13 +13,17 @@ height = 0.991854
 transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, 0, 0, 0)
 script = ExtResource("1_50jld")
 
-[node name="figurine-cube-detailed2" parent="." instance=ExtResource("2_dvpjt")]
+[node name="Mesh" parent="." instance=ExtResource("2_dvpjt")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 3.72529e-09)
 shape = SubResource("CapsuleShape3D_o3o46")
 
 [node name="SFX_Collectable" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_o3nwh")
+stream = ExtResource("3_d83sk")
 
+[node name="sfx_boop" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_b8iy4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -16,7 +16,7 @@ stream = ExtResource("3_e85gd")
 [node name="Coin" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_eyq02")
 
-[node name="Collectable" type="AudioStreamPlayer3D" parent="."]
+[node name="abc" type="AudioStreamPlayer3D" parent="."]
 
 [node name="DeathLava" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_baexc")
