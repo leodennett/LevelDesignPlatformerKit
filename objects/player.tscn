@@ -81,6 +81,7 @@ stream = ExtResource("6_3oeds")
 
 [node name="SFX_SpikeDeath" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_wy16p")
+volume_db = -1.0
 
 [node name="SFX_Respawn" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_0243k")

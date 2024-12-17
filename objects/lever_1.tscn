@@ -45,5 +45,6 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.02, -0.533)
 
 [node name="LeverSFX" type="AudioStreamPlayer3D" parent="." index="7"]
 stream = ExtResource("5_2s6pu")
+volume_db = -2.0
 
 [connection signal="area_entered" from="LeverArea3D" to="." method="_on_lever_area_3d_area_entered"]

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_lgsom"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51hsx"]
-size = Vector3(2.36108, 0.835938, 0.826172)
+size = Vector3(2.29468, 0.786865, 0.826172)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wdfqi"]
 size = Vector3(2, 0.75, 0.75)

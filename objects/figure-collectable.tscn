@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape3D_o3o46")
 
 [node name="SFX_Collectable" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_d83sk")
+volume_db = -2.0
 
 [node name="sfx_boop" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_b8iy4")
