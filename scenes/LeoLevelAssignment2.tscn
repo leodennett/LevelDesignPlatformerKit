@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dbbrv5r1d22j4"]
+[gd_scene load_steps=45 format=3 uid="uid://dbbrv5r1d22j4"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ktxu7"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_vletb"]
@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="27_phhdj"]
 [ext_resource type="PackedScene" uid="uid://d36wl6fvmw3g1" path="res://objects/figure-collectable.tscn" id="28_kj08x"]
 [ext_resource type="Script" path="res://scripts/saw_rotateVERT.gd" id="29_yeuyg"]
-[ext_resource type="PackedScene" uid="uid://5qtd6uqljygo" path="res://objects/platform_fallingOG.tscn" id="32_cgn13"]
 [ext_resource type="PackedScene" uid="uid://dgwjgp83wqy06" path="res://objects/L_falling_platform.tscn" id="33_np1j0"]
 [ext_resource type="PackedScene" uid="uid://d2aou46r28pil" path="res://Blender Meshes/BackgroundRock1.blend" id="34_1ncgy"]
 [ext_resource type="PackedScene" uid="uid://d2qj8ognd8kll" path="res://Blender Meshes/BackgroundRock2.blend" id="35_kk1dd"]
@@ -121,7 +120,7 @@ environment = ExtResource("1_ktxu7")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_vletb")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9, 20.8, 143)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 2.8, -13)
 view = NodePath("../View")
 walk_speed = 180
 sprint_speed = 240
@@ -564,10 +563,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, 12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, 12)
 
 [node name="platform-medium10" parent="." instance=ExtResource("18_spsuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 6, 73)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 6, 70)
 
 [node name="platform-medium22" parent="." instance=ExtResource("18_spsuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 13, 74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -4, 75)
 
 [node name="saw" parent="." instance=ExtResource("24_2jly3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 4.5, 47)
@@ -703,7 +702,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 20.5, 129)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
 
 [node name="platform-medium26" parent="." instance=ExtResource("18_spsuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -3, -21)
 
 [node name="platform-medium33" parent="." instance=ExtResource("18_spsuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -5)
@@ -745,7 +744,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4, 4.5, 33)
 transform = Transform3D(-0.189329, 0, -1.99102, 0.229187, 1.98671, -0.0217937, 1.97778, -0.230221, -0.18807, 7.83764, 6.74155, 30.3991)
 
 [node name="Figure-collectable3" parent="." instance=ExtResource("28_kj08x")]
-transform = Transform3D(-1, 1.84895e-08, -8.54452e-08, 0, 0.977379, 0.211495, 8.74228e-08, 0.211495, -0.977379, -17.9472, 7.34206, 72.1072)
+transform = Transform3D(-1, 1.84895e-08, -8.54452e-08, 0, 0.977379, 0.211495, 8.74228e-08, 0.211495, -0.977379, -18, 7, 70)
 
 [node name="Figure-collectable4" parent="." instance=ExtResource("28_kj08x")]
 transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, 7.5, 13.581, 109)
@@ -826,7 +825,7 @@ ping_pong = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 20, 134)
 
 [node name="platform-medium31" parent="." instance=ExtResource("18_spsuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 20, 138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 20, 138)
 
 [node name="saw7" parent="." instance=ExtResource("24_2jly3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 20.5, 140.5)
@@ -839,7 +838,7 @@ is_on_from_start = false
 ping_pong = true
 
 [node name="lever4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("26_k78w3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 20.5, 138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 20.5, 138)
 target = NodePath("../moving_object_path7")
 
 [node name="Figure-collectable5" parent="." instance=ExtResource("28_kj08x")]
@@ -1022,28 +1021,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 13.5, 75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 21.5, 123)
 
 [node name="FallingPlatformLeo20" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 60)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 61)
 
 [node name="FallingPlatformLeo21" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 63)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 64)
 
 [node name="FallingPlatformLeo22" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 66)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 67)
 
 [node name="FallingPlatformLeo23" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 6, 69)
-
-[node name="FallingPlatformLeo24" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 6, 55)
-
-[node name="FallingPlatformLeo25" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 6, 58)
-
-[node name="FallingPlatformLeo26" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 6, 61)
-
-[node name="FallingPlatformLeo27" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 6, 64)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 3, 69)
 
 [node name="BackgroundRock10" parent="." instance=ExtResource("35_kk1dd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -10, -50)
@@ -1477,9 +1464,6 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -9, 16.5, 119)
 [node name="coin79" parent="." instance=ExtResource("27_phhdj")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -5, 18.5, 120)
 
-[node name="checkpoint4" parent="." instance=ExtResource("22_5tdr0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.564815, -14)
-
 [node name="coin80" parent="." instance=ExtResource("27_phhdj")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -7, 21.5, 152)
 
@@ -1512,9 +1496,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4, 20, 143)
 
 [node name="FallingPlatformLeo29" parent="." instance=ExtResource("33_np1j0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4, 20, 143)
-
-[node name="FallingPlatformLeo30" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 20, 143)
 
 [node name="FallingPlatformLeo18" parent="." instance=ExtResource("33_np1j0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4, 20, 143)
@@ -1588,17 +1569,17 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.5, 20.5, 149)
 [node name="coin101" parent="." instance=ExtResource("27_phhdj")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -9.5, 20.5, 149)
 
+[node name="spike-block26" parent="." instance=ExtResource("21_qbw30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6, 56)
+
+[node name="spike-block27" parent="." instance=ExtResource("21_qbw30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 7, 56)
+
+[node name="spike-block28" parent="." instance=ExtResource("21_qbw30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 8, 56)
+
 [node name="FallingPlatformLeo" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -14)
-
-[node name="FallingPlatformLeo3" parent="." instance=ExtResource("33_np1j0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, -14)
-
-[node name="platform-falling" parent="." instance=ExtResource("32_cgn13")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -17)
-
-[node name="Figure-collectable" parent="." instance=ExtResource("28_kj08x")]
-transform = Transform3D(1, 0, 0, 0, 0.977379, 0.211495, 0, -0.211495, 0.977379, -10, 21, 142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 138)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgwjgp83wqy06"]
+[gd_scene load_steps=19 format=3 uid="uid://dgwjgp83wqy06"]
 
 [ext_resource type="PackedScene" uid="uid://dc6guvxc2skh6" path="res://Blender Meshes/cube.blend" id="1_15vsp"]
 [ext_resource type="Script" path="res://objects/l_falling_platform.gd" id="1_24xvd"]
+[ext_resource type="AudioStream" uid="uid://bjbcjn14ja2k5" path="res://_Audio Files/FallingPlatform_1.wav" id="3_igtsa"]
+[ext_resource type="AudioStream" uid="uid://bek8ihon4buju" path="res://_Audio Files/FallingPlatformLand_1.wav" id="4_3i3yv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8hq8"]
 size = Vector3(2.11621, 0.731125, 2.11548)
@@ -151,5 +153,13 @@ root_node = NodePath("../cube")
 libraries = {
 "": SubResource("AnimationLibrary_vifk7")
 }
+
+[node name="SFX_FallingPlatform" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_igtsa")
+volume_db = 3.0
+
+[node name="SFX_LandFP" type="AudioStreamPlayer3D" parent="SFX_FallingPlatform"]
+stream = ExtResource("4_3i3yv")
+volume_db = 2.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
